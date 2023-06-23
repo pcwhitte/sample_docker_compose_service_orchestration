@@ -1,0 +1,12 @@
+{
+    "name": "sample_server",
+    "version": "1.0.0",
+    "description": "server container",
+    "author": "me",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+    }
+}

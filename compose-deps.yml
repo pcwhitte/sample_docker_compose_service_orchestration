@@ -1,0 +1,18 @@
+services:
+  client:
+    image: my_client
+    build: ./client
+    network_mode: host
+    depends_on:
+      server:
+        condition: service_healthy
+  server:
+    image: my_server
+    build: ./server
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      interval: 10s
+      timeout: 50s
+      retries: 5

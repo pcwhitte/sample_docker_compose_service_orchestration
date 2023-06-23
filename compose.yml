@@ -1,0 +1,10 @@
+services:
+  client:
+    image: my_client
+    build: ./client
+    network_mode: host
+  server:
+    image: my_server
+    build: ./server
+    ports:
+      - "8080:8080"
